@@ -1,5 +1,5 @@
 #!/bin/bash
-# Replace the API domain name with your environment's domain to run the script against the application running in Elastic Beanstalk
+# Replace the API domain name with your environment's domain to run the script against the application running in ECS
 API=localhost:5000/api
 
 # for (( c=1; c<=5; c++ ))
