@@ -1,0 +1,6 @@
+# Buildspec run in the integ test stage of your pipeline.
+version: 0.2
+phases:
+  build:
+    commands:
+      - echo "Run your tests"
