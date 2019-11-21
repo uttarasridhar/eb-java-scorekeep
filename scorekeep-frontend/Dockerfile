@@ -1,3 +1,6 @@
 FROM nginx
 ADD public /public
-ADD nginx.conf /etc/nginx/nginx.conf
+
+COPY docker-entrypoint.sh /
+ENTRYPOINT ["/docker-entrypoint.sh"]
+CMD ["nginx", "-g", "daemon off;"]
