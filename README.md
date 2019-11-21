@@ -54,15 +54,11 @@ The Java application is built using the gradle Docker container so it does not r
 1. Setup the Cloudformation stack to create the prerequisite resources by executing `make stack` in the `cloudformation/` folder
 2. Build your API container `make build` in the `scorekeep-api` folder
 3. In the root folder, run `archer init` and follow the wizard. Name the project scorekeep, environment test, app: scorekeep-api.
-4. In the root folder, run `archer app deploy`. Go to the TG console, and fix the health check to use path as `/api/rules` and timeout as `60` and interval as `100`.
+4. In the root folder, run `archer app init` and follow the wizard, use the app name scorekeep-frontend.
+5. In the root folder, run `archer pipeline init`, commit the code to github repo and trigger `archer pipeline deploy`
 
-5. Build and Publish your Frontend container to the ECR repository created by Cloudformation executing `make publish` in the `scorekeep-frontend/` folder
-4. Populate your Task Definition with the correct region and account id using the `generate-task-definition` script in the `task-definition` folder
-5. Register your Task Definition to ECS with `aws ecs register-task-definition --cli-input-json file://scorekeep-task-definition.json`
-6. Launch your Service or Task using the AWS CLI, ECS CLI, or AWS Management Console
-
-# Configuring notifications
-The API uses SNS to send a notification email when a game ends. To enable e-mail notifications, to an email address to your Task Definition in environment variable **NOTIFICATION_EMAIL**. To enable other notifications add the subscription to the topic through the SNS console.
+6. Go to the TG console, and fix the health check for the api service to use path as `/api/rules` and timeout as `60` and interval as `100`.
+7. Go to the ALB console, delete the listener rule with 1 priority
 
 # How it works
 
