@@ -1,6 +1,5 @@
 scorekeep-api/.gradle/*
 *.DS_Store
 *.zip
-*.sh
 !bin/*.sh
 lib
