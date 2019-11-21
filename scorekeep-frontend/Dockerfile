@@ -1,5 +1,5 @@
 FROM nginx
 ADD public /public
-ADD docker-entrypoint.sh /
+ADD docker-entrypoint.sh /docker-entrypoint.sh
 ENTRYPOINT ["/docker-entrypoint.sh"]
 CMD ["nginx", "-g", "daemon off;"]
