@@ -28,7 +28,6 @@ phases:
   build:
     commands:
       - echo "Run your tests"
-      - make build
   post_build:
     commands:
       - ls -l

@@ -1,9 +1,4 @@
-GRADLE_DOCKER_IMAGE=gradle:4.3
-
 build:
-	docker run --rm -v ${CURDIR}:/home/gradle/project -w /home/gradle/project $(GRADLE_DOCKER_IMAGE) gradle build
-
-package: build
 	docker build -t scorekeep-api .
 
 run-local: package
